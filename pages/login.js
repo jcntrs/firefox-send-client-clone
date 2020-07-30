@@ -24,7 +24,7 @@ const Login = () => {
                 <h2 className="text-4xl font-sans font-bold text-gray-500 text-center my-4">Iniciar Sesión</h2>
                 <div className="flex justify-center mt-5">
                     <div className="w-full max-w-lg">
-                        <form className="bg-white rounded shadow-md px-8 pt-6 pb-8 mb-4" onSubmit={formik.handleSubmit}>
+                        <form className="bg-white rounded shadow-lg px-8 pt-6 pb-8 mb-4" onSubmit={formik.handleSubmit}>
                             <div className="mb-4">
                                 <label className="block text-black text-sm font-bold mb-2" htmlFor="email">Email</label>
                                 <input
@@ -37,7 +37,7 @@ const Login = () => {
                                     onBlur={formik.handleBlur}
                                 />
                                 {formik.touched.email && formik.errors.email
-                                    && <div className="my-2 bg-gray-200 border-l-4 border-red-500 text-red-700 p-4">
+                                    && <div className="my-2 bg-gray-200 border-l-4 border-red-500 text-red-700 px-4 py-2">
                                         <p><span className="font-bold">Error:</span> {formik.errors.email}.</p>
                                     </div>
                                 }
@@ -54,7 +54,7 @@ const Login = () => {
                                     onBlur={formik.handleBlur}
                                 />
                                 {formik.touched.password && formik.errors.password
-                                    && <div className="my-2 bg-gray-200 border-l-4 border-red-500 text-red-700 p-4">
+                                    && <div className="my-2 bg-gray-200 border-l-4 border-red-500 text-red-700 px-4 py-2">
                                         <p><span className="font-bold">Error:</span> {formik.errors.password}.</p>
                                     </div>
                                 }
