@@ -1,9 +1,16 @@
-import React from 'react';
+import React, { useContext, useEffect } from 'react';
 import { useFormik } from 'formik';
+import { useRouter } from 'next/router';
+import AuthContext from '../contexts/auth/AuthContext';
 import Layout from '../components/Layout';
+import Alert from '../components/Alert';
 import * as yup from 'yup';
 
 const Login = () => {
+    const authContext = useContext(AuthContext);
+    const { authenticated, message, authenticateUser } = authContext
+    const router = useRouter();
+
     const formik = useFormik({
         initialValues: {
             email: '',
@@ -14,14 +21,21 @@ const Login = () => {
             password: yup.string().required('Contraseña es obligatoria')
         }),
         onSubmit: values => {
-            console.log(values)
+            authenticateUser(values);
         }
     });
+
+    useEffect(() => {
+        if (authenticated) {
+            router.push('/');
+        }
+    }, [authenticated]);
 
     return (
         <Layout>
             <div className="md:w-4/5 xl:w-3/5 mx-auto mb-32">
                 <h2 className="text-4xl font-sans font-bold text-gray-500 text-center my-4">Iniciar Sesión</h2>
+                {message && <Alert />}
                 <div className="flex justify-center mt-5">
                     <div className="w-full max-w-lg">
                         <form className="bg-white rounded shadow-lg px-8 pt-6 pb-8 mb-4" onSubmit={formik.handleSubmit}>
