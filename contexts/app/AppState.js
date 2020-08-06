@@ -9,7 +9,8 @@ import {
     SUCCESSFUL_LINK_CREATION,
     WRONG_LINK_CREATION,
     SHOW_ALERT,
-    CLEAN_ALERT
+    CLEAN_ALERT,
+    CLEAN_STATE
 } from '../../types';
 
 const AppState = ({ children }) => {
@@ -87,6 +88,12 @@ const AppState = ({ children }) => {
         }
     }
 
+    const cleanState = () => {
+        dispatch({
+            type: CLEAN_STATE
+        });
+    }
+
     return (
         <AppContext.Provider
             value={{
@@ -100,7 +107,8 @@ const AppState = ({ children }) => {
                 loading: state.loading,
                 showAlert,
                 uploadFile,
-                createLink
+                createLink,
+                cleanState
             }}
         >
             {children}

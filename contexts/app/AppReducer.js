@@ -5,7 +5,8 @@ import {
     SUCCESSFUL_LINK_CREATION,
     WRONG_LINK_CREATION,
     SHOW_ALERT,
-    CLEAN_ALERT
+    CLEAN_ALERT,
+    CLEAN_STATE
 } from '../../types';
 
 export default (state, action) => {
@@ -42,6 +43,17 @@ export default (state, action) => {
             return {
                 ...state,
                 url: action.payload
+            }
+        case CLEAN_STATE:
+            return {
+                name: null,
+                originalName: null,
+                downloads: null,
+                author: null,
+                password: null,
+                url: null,
+                fileMessage: null,
+                loading: false,
             }
 
         default:

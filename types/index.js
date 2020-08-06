@@ -13,3 +13,4 @@ export const WRONG_LINK_CREATION = 'WRONG_LINK_CREATION';
 export const SHOW_ALERT = 'SHOW_ALERT';
 
 export const CLEAN_ALERT = 'CLEAN_ALERT';
+export const CLEAN_STATE = 'CLEAN_STATE';
