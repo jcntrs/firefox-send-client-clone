@@ -4,7 +4,7 @@ import AppContext from '../../contexts/app/AppContext';
 import FileAlert from '../../components/FileAlert';
 import axiosClient from '../../config/axios';
 
-export async function getServerSideProps({ params }) {
+export async function getStaticProps({ params }) {
     const { enlace } = params
     const response = await axiosClient.get(`/api/enlaces/${enlace}`);
 
@@ -15,7 +15,7 @@ export async function getServerSideProps({ params }) {
     }
 }
 
-export async function getServerSidePaths() {
+export async function getStaticPaths() {
     const response = await axiosClient.get('/api/enlaces');
 
     return {
