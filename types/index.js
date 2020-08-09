@@ -14,3 +14,6 @@ export const SHOW_ALERT = 'SHOW_ALERT';
 
 export const CLEAN_ALERT = 'CLEAN_ALERT';
 export const CLEAN_STATE = 'CLEAN_STATE';
+
+export const SET_PASSWORD = 'SET_PASSWORD';
+export const SET_DOWNLOADS = 'SET_DOWNLOADS';

@@ -10,7 +10,9 @@ import {
     WRONG_LINK_CREATION,
     SHOW_ALERT,
     CLEAN_ALERT,
-    CLEAN_STATE
+    CLEAN_STATE,
+    SET_PASSWORD,
+    SET_DOWNLOADS
 } from '../../types';
 
 const AppState = ({ children }) => {
@@ -84,13 +86,27 @@ const AppState = ({ children }) => {
                 payload: response.data.msg
             });
         } catch (error) {
-            console.log(error)
+            
         }
     }
 
     const cleanState = () => {
         dispatch({
             type: CLEAN_STATE
+        });
+    }
+
+    const setPassword = password => {
+        dispatch({
+            type: SET_PASSWORD,
+            payload: password
+        });
+    }
+
+    const setDownloads = downloads => {
+        dispatch({
+            type: SET_DOWNLOADS,
+            payload: downloads
         });
     }
 
@@ -108,7 +124,9 @@ const AppState = ({ children }) => {
                 showAlert,
                 uploadFile,
                 createLink,
-                cleanState
+                cleanState,
+                setPassword,
+                setDownloads
             }}
         >
             {children}

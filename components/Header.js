@@ -18,9 +18,9 @@ const Header = () => {
         cleanState();
     }
 
-    console.log(user)
     useEffect(() => {
-        getAuthenticatedUser();
+        const token = localStorage.getItem('token');
+        token && getAuthenticatedUser();
     }, [])
 
     return (

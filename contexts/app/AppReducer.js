@@ -6,7 +6,9 @@ import {
     WRONG_LINK_CREATION,
     SHOW_ALERT,
     CLEAN_ALERT,
-    CLEAN_STATE
+    CLEAN_STATE,
+    SET_PASSWORD,
+    SET_DOWNLOADS
 } from '../../types';
 
 export default (state, action) => {
@@ -54,6 +56,16 @@ export default (state, action) => {
                 url: null,
                 fileMessage: null,
                 loading: false,
+            }
+        case SET_PASSWORD:
+            return {
+                ...state,
+                password: action.payload
+            }
+        case SET_DOWNLOADS:
+            return {
+                ...state,
+                downloads: action.payload
             }
 
         default:
