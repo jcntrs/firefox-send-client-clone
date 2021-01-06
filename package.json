@@ -9,7 +9,7 @@
     "export": "next export"
   },
   "dependencies": {
-    "axios": "^0.19.2",
+    "axios": "^0.21.1",
     "formik": "^2.1.5",
     "next": "9.5.0",
     "react": "16.13.1",
